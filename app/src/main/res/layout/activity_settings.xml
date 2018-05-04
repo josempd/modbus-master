@@ -1,0 +1,133 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.example.josempd.modbusmaster.SettingsActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Parámetros Modbus"
+        android:id="@+id/tv1"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/dirIP"
+        android:layout_below="@+id/tv1"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:hint="Dirección IP"
+        android:singleLine="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/Port"
+        android:layout_below="@+id/dirIP"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/dirIP"
+        android:layout_alignEnd="@+id/dirIP"
+        android:hint="Puerto"
+        android:inputType="number" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/SlaveID"
+        android:layout_below="@+id/Port"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:hint="Dirección del esclavo"
+        android:inputType="number" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/SensorID"
+        android:layout_below="@+id/SlaveID"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/SlaveID"
+        android:layout_alignEnd="@+id/SlaveID"
+        android:hint="Punto inicial"
+        android:inputType="number" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/SensorNumber"
+        android:layout_below="@+id/SensorID"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/SensorID"
+        android:layout_alignEnd="@+id/SensorID"
+        android:inputType="number"
+        android:hint="Número de puntos" />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinner"
+        android:spinnerMode="dropdown"
+        android:layout_toRightOf="@+id/TextMB"
+        android:layout_toLeftOf="@+id/SaveButton"
+        android:layout_toStartOf="@+id/SaveButton"
+        android:layout_alignTop="@+id/TextMB"
+        android:layout_alignBottom="@+id/TextMB" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Guardar"
+        android:id="@+id/SaveButton"
+        android:layout_below="@+id/Tdm"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Func Modbus:"
+        android:id="@+id/TextMB"
+        android:textColor="#000"
+        android:layout_alignBottom="@+id/SaveButton"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/SaveButton"
+        android:textAlignment="center" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/Tdm"
+        android:layout_below="@+id/SensorNumber"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:hint="Tiempo de muestreo (seg)"
+        android:inputType="number"
+        android:layout_alignRight="@+id/DeleteAllButton"
+        android:layout_alignEnd="@+id/DeleteAllButton" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Borrar valores medidos"
+        android:id="@+id/DeleteAllButton"
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/TextMB"
+        android:layout_alignStart="@+id/TextMB"
+        android:layout_alignRight="@+id/SaveButton"
+        android:layout_alignEnd="@+id/SaveButton" />
+
+</RelativeLayout>
